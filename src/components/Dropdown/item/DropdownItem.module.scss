@@ -22,12 +22,12 @@
     white-space: nowrap;
     padding: 0 8px;
     flex-grow: 1;
-    &__match{
+    &__match {
       @include font-twelve-bold;
       color: $GRAY_3;
     }
 
-    &__crop{
+    &__crop {
       @include font-twelve-bold;
       color: $GRAY_6;
     }

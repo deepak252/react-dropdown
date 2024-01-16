@@ -121,7 +121,7 @@ const Dropdown = ({
         ))
       ) : (
         <div>
-          <p style={{ margin: '0.8em', textAlign:'left' }}>No users found</p>
+          <p style={{ margin: '0.8em', textAlign: 'left' }}>No users found</p>
         </div>
       )}
     </DropdownWrapper>
