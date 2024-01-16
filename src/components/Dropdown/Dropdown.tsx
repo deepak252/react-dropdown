@@ -50,10 +50,14 @@ const Dropdown = ({
     }
     setSelectedItems(updatedItems)
     onChangeValue && onChangeValue(updatedItems)
+    setHighlightItem(null)
   }
 
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
+    if (e.target.value.length) {
+      setHighlightItem(null)
+    }
   }
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
