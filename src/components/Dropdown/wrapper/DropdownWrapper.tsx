@@ -7,7 +7,8 @@ interface DropdownWrapperProps {
   setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>
   labelChips: React.ReactNode[]
   onClick?: React.MouseEventHandler<HTMLDivElement>
-  onInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  searchQuery?: string
+  onSearchQueryChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   onInputKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   className?: string
   contentClass?: string
@@ -19,7 +20,8 @@ const DropdownWrapper = ({
   isOpen,
   setIsOpen,
   labelChips,
-  onInputChange,
+  searchQuery,
+  onSearchQueryChange,
   onInputKeyPress,
   className,
   contentClass,
@@ -49,9 +51,10 @@ const DropdownWrapper = ({
         {labelChips?.length ? labelChips : null}
         <span className={styles.container__target__content}>
           <input
+            value={searchQuery}
             type="text"
-            placeholder="Search"
-            onChange={onInputChange}
+            placeholder="Add new user..."
+            onChange={onSearchQueryChange}
             onKeyDown={onInputKeyPress}
             className={styles.container__target__content__input}
             onClick={(e) => {

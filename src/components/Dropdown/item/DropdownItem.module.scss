@@ -7,9 +7,9 @@
   cursor: pointer;
   font-size: 14px;
   color: $GRAY_6;
-  padding: 4px 8px;
+  padding: 6px 8px;
   text-align: start;
-  grid-template-columns: 32px 1fr 2fr;
+  grid-template-columns: 32px 130px 2fr;
 
   &__icon {
     height: 32px;
@@ -18,10 +18,19 @@
   }
 
   &__title {
-    @include font-twelve-bold;
+    @include overflow-ellipsis;
     white-space: nowrap;
     padding: 0 8px;
     flex-grow: 1;
+    &__match{
+      @include font-twelve-bold;
+      color: $GRAY_3;
+    }
+
+    &__crop{
+      @include font-twelve-bold;
+      color: $GRAY_6;
+    }
   }
 
   &__subtitle {

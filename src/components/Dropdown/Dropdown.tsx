@@ -31,7 +31,7 @@ const Dropdown = ({
   useEffect(() => {
     setItems(
       options.filter((option) =>
-        option.label.toLowerCase().includes(searchQuery.toLowerCase())
+        option.label.toLowerCase().startsWith(searchQuery.toLowerCase())
       )
     )
   }, [searchQuery, options])
@@ -50,6 +50,7 @@ const Dropdown = ({
     }
     setSelectedItems(updatedItems)
     onChangeValue && onChangeValue(updatedItems)
+    setSearchQuery('')
     setHighlightItem(null)
   }
 
@@ -102,7 +103,8 @@ const Dropdown = ({
           className={styles.chip}
         />
       ))}
-      onInputChange={handleSearchInputChange}
+      searchQuery={searchQuery}
+      onSearchQueryChange={handleSearchInputChange}
       onInputKeyPress={handleKeyPress}
       className={wrapperClass}
       contentClass={contentClass}
@@ -114,11 +116,12 @@ const Dropdown = ({
             key={option.value as React.Key}
             option={option}
             onClick={() => handleItemClick(option)}
+            searchQuery={searchQuery}
           />
         ))
       ) : (
         <div>
-          <p style={{ margin: '0.8em' }}>No items found</p>
+          <p style={{ margin: '0.8em', textAlign:'left' }}>No users found</p>
         </div>
       )}
     </DropdownWrapper>

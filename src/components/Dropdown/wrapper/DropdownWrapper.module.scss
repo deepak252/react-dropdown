@@ -11,7 +11,7 @@
     @include disable-select;
     flex-wrap: wrap;
 
-    border-bottom: 1px solid $GRAY_3;
+    border-bottom: 2px solid $PRIMARY;
     padding: 2px 0;
     box-sizing: border-box;
     font-size: 14px;
@@ -46,14 +46,11 @@
         top: 32px;
         border-radius: 4px;
         overflow-y: auto;
-        width: 100%;
-        max-width: 300px;
+        width: 380px;
+        max-width: 500px;
         max-height: 200px;
       }
     }
 
-    &:focus-within {
-      border-bottom: 2px solid $PRIMARY;
-    }
   }
 }
