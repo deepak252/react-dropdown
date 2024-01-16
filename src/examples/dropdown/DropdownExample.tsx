@@ -8,7 +8,7 @@ const DropdownExample = () => {
   }
   return (
     <div style={{ margin: '30px' }}>
-      <h1>React Dropdown</h1>
+      <h1>Select Users</h1>
       <Dropdown options={options} onChangeValue={handleOptionSelect} />
     </div>
   )
